@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team.Filmriss - Mallorca Community 2026</title>
+    <title>Team Filmriss - Mallorca Community 2026</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -14,9 +14,6 @@
                         neon: '#EEFF00',
                         party: '#FF0044',
                         dark: '#0A0A0A'
-                    },
-                    fontFamily: {
-                        heading: ['Impact', 'Haettenschweiler', 'Arial Narrow Bold', 'sans-serif']
                     }
                 }
             }
@@ -61,11 +58,6 @@
             background: linear-gradient(to bottom, #EEFF00, #FF0044);
         }
         
-        .lang-btn.active {
-            background: #EEFF00;
-            color: #0A0A0A;
-        }
-        
         .emoji-float {
             animation: float 3s ease-in-out infinite;
         }
@@ -84,6 +76,46 @@
             25% { transform: rotate(-5deg); }
             75% { transform: rotate(5deg); }
         }
+        
+        .logo-glow {
+            filter: drop-shadow(0 0 10px rgba(238, 255, 0, 0.3));
+        }
+        
+        .instagram-btn {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+        
+        .instagram-btn:hover {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            filter: brightness(1.1);
+        }
+        
+        .tiktok-btn {
+            background: #000000;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .tiktok-btn::before {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            right: 2px;
+            bottom: 2px;
+            background: #000000;
+            border-radius: inherit;
+            z-index: 1;
+        }
+        
+        .tiktok-btn:hover {
+            box-shadow: -3px -3px 0 #00f2ea, 3px 3px 0 #ff0050;
+        }
+        
+        .tiktok-btn svg, .tiktok-btn span {
+            position: relative;
+            z-index: 2;
+        }
     </style>
 </head>
 <body class="bg-dark text-white overflow-x-hidden">
@@ -93,14 +125,24 @@
         <!-- Navigation -->
         <nav class="fixed top-0 left-0 right-0 z-50 bg-dark/90 backdrop-blur-md border-b border-neon/20">
             <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-                <div class="font-bebas text-2xl md:text-3xl tracking-wider">
-                    <span class="text-neon">Team.</span><span class="text-party">Filmriss</span>
+                <div class="flex items-center gap-3">
+                    <img src="/mnt/user-data/uploads/9679d2bf-5bed-4dc7-bc60-ea5ce7eb1ce3.jpeg" alt="Team Filmriss Logo" class="h-12 w-12 rounded-full logo-glow">
+                    <div class="font-bebas text-2xl md:text-3xl tracking-wider">
+                        <span class="text-white">TEAM </span><span class="text-neon">FILMRISS</span>
+                    </div>
                 </div>
-                <!-- Language Switcher -->
-                <div class="flex gap-1 bg-white/10 rounded-full p-1">
-                    <button onclick="setLanguage('de')" class="lang-btn active px-3 py-1 rounded-full text-sm font-bold transition-all duration-300" data-lang="de">DE</button>
-                    <button onclick="setLanguage('en')" class="lang-btn px-3 py-1 rounded-full text-sm font-bold transition-all duration-300 hover:bg-white/20" data-lang="en">EN</button>
-                    <button onclick="setLanguage('es')" class="lang-btn px-3 py-1 rounded-full text-sm font-bold transition-all duration-300 hover:bg-white/20" data-lang="es">ES</button>
+                <!-- Social Links in Nav -->
+                <div class="flex gap-2">
+                    <a href="https://www.instagram.com/team.filmriss?igsh=ZDAzZDA1endyMmx6" target="_blank" class="w-10 h-10 instagram-btn rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110">
+                        <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.tiktok.com/@team.filmriss/" target="_blank" class="w-10 h-10 tiktok-btn rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110">
+                        <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                        </svg>
+                    </a>
                 </div>
             </div>
         </nav>
@@ -108,17 +150,20 @@
         <!-- Hero Content -->
         <div class="flex-1 flex items-center justify-center px-4 pt-20 pb-10">
             <div class="text-center max-w-4xl">
-                <div class="text-6xl md:text-8xl mb-6 emoji-float">🍻</div>
+                <!-- Logo groß -->
+                <div class="mb-8">
+                    <img src="/mnt/user-data/uploads/9679d2bf-5bed-4dc7-bc60-ea5ce7eb1ce3.jpeg" alt="Team Filmriss Logo" class="w-40 h-40 md:w-52 md:h-52 mx-auto rounded-full logo-glow border-4 border-neon/30">
+                </div>
                 <h1 class="font-bebas text-4xl md:text-6xl lg:text-7xl mb-6 leading-tight">
-                    <span class="text-neon text-glow" data-i18n="hero.headline1">Mallorca ist nur einmal im Jahr?</span>
+                    <span class="text-neon text-glow">Mallorca ist nur einmal im Jahr?</span>
                     <br>
-                    <span class="text-party" data-i18n="hero.headline2">Nicht mit uns!</span>
+                    <span class="text-party">Nicht mit uns!</span>
                 </h1>
-                <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto" data-i18n="hero.subline">
+                <p class="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
                     Die wildeste Community der Playa de Palma wartet auf dich. Bist du bereit für 2026?
                 </p>
                 <a href="#termine" class="inline-block gradient-party text-dark font-bold text-lg px-8 py-4 rounded-full shake transition-transform hover:scale-105">
-                    <span data-i18n="hero.cta">🎉 Zu den Terminen 2026</span>
+                    🎉 Zu den Terminen 2026
                 </a>
                 <div class="mt-12 flex justify-center gap-4 text-4xl">
                     <span class="emoji-float" style="animation-delay: 0s;">🌴</span>
@@ -141,10 +186,10 @@
         <div class="container mx-auto max-w-4xl">
             <div class="text-center mb-12">
                 <span class="text-5xl mb-4 block">🤙</span>
-                <h2 class="font-bebas text-3xl md:text-5xl text-neon mb-4" data-i18n="about.title">Wer wir sind</h2>
+                <h2 class="font-bebas text-3xl md:text-5xl text-neon mb-4">Wer wir sind</h2>
             </div>
             <div class="bg-white/5 backdrop-blur rounded-3xl p-6 md:p-10 border border-neon/20 card-glow transition-all duration-500">
-                <p class="text-lg md:text-xl text-gray-200 leading-relaxed text-center" data-i18n="about.text">
+                <p class="text-lg md:text-xl text-gray-200 leading-relaxed text-center">
                     Wir sind eine Gemeinschaft aus Partybegeisterten, die das Leben feiern. Kein Stress, nur gute Laune und kalte Getränke an der Playa. Vom ersten Sangria bis zum letzten Song – bei uns bist du nie allein!
                 </p>
                 <div class="flex justify-center gap-6 mt-8 text-4xl">
@@ -162,11 +207,11 @@
         <div class="container mx-auto max-w-5xl">
             <div class="text-center mb-12">
                 <span class="text-5xl mb-4 block">💪</span>
-                <h2 class="font-bebas text-3xl md:text-5xl text-party mb-4" data-i18n="philosophy.title">Unsere Philosophie</h2>
+                <h2 class="font-bebas text-3xl md:text-5xl text-party mb-4">Unsere Philosophie</h2>
             </div>
             
             <div class="bg-dark/50 backdrop-blur rounded-3xl p-6 md:p-10 border border-party/30 mb-10 text-center">
-                <p class="font-bebas text-2xl md:text-4xl text-neon text-glow" data-i18n="philosophy.motto">
+                <p class="font-bebas text-2xl md:text-4xl text-neon text-glow">
                     "Niemand feiert allein."
                 </p>
             </div>
@@ -175,20 +220,20 @@
                 <!-- Value 1 -->
                 <div class="bg-white/5 rounded-2xl p-6 text-center border border-white/10 hover:border-neon/50 transition-all duration-300 card-glow">
                     <span class="text-5xl mb-4 block">🤝</span>
-                    <h3 class="font-bebas text-xl text-neon mb-2" data-i18n="philosophy.value1.title">Zusammenhalt</h3>
-                    <p class="text-gray-400 text-sm" data-i18n="philosophy.value1.text">Einer für alle, alle für Sangria!</p>
+                    <h3 class="font-bebas text-xl text-neon mb-2">Zusammenhalt</h3>
+                    <p class="text-gray-400 text-sm">Einer für alle, alle für Sangria!</p>
                 </div>
                 <!-- Value 2 -->
                 <div class="bg-white/5 rounded-2xl p-6 text-center border border-white/10 hover:border-party/50 transition-all duration-300 card-glow">
                     <span class="text-5xl mb-4 block">🎉</span>
-                    <h3 class="font-bebas text-xl text-party mb-2" data-i18n="philosophy.value2.title">Spaß</h3>
-                    <p class="text-gray-400 text-sm" data-i18n="philosophy.value2.text">Das Leben ist zu kurz für schlechte Partys!</p>
+                    <h3 class="font-bebas text-xl text-party mb-2">Spaß</h3>
+                    <p class="text-gray-400 text-sm">Das Leben ist zu kurz für schlechte Partys!</p>
                 </div>
                 <!-- Value 3 -->
                 <div class="bg-white/5 rounded-2xl p-6 text-center border border-white/10 hover:border-neon/50 transition-all duration-300 card-glow">
                     <span class="text-5xl mb-4 block">🛡️</span>
-                    <h3 class="font-bebas text-xl text-neon mb-2" data-i18n="philosophy.value3.title">Verantwortung</h3>
-                    <p class="text-gray-400 text-sm" data-i18n="philosophy.value3.text">Trotz Filmriss sicher nach Hause – wir passen aufeinander auf!</p>
+                    <h3 class="font-bebas text-xl text-neon mb-2">Verantwortung</h3>
+                    <p class="text-gray-400 text-sm">Trotz Filmriss sicher nach Hause – wir passen aufeinander auf!</p>
                 </div>
             </div>
         </div>
@@ -199,8 +244,8 @@
         <div class="container mx-auto max-w-4xl">
             <div class="text-center mb-12">
                 <span class="text-5xl mb-4 block">📅</span>
-                <h2 class="font-bebas text-3xl md:text-5xl text-neon mb-2" data-i18n="events.title">Termine 2026</h2>
-                <p class="text-gray-400" data-i18n="events.subtitle">Merk dir diese Daten – oder wir holen dich persönlich ab!</p>
+                <h2 class="font-bebas text-3xl md:text-5xl text-neon mb-2">Termine 2026</h2>
+                <p class="text-gray-400">Merk dir diese Daten – oder wir holen dich persönlich ab!</p>
             </div>
             
             <div class="relative">
@@ -215,10 +260,10 @@
                         <div class="md:w-1/2 md:pr-8 md:text-right">
                             <div class="bg-gradient-to-br from-amber-500/20 to-yellow-500/10 rounded-2xl p-6 border border-amber-500/30 card-glow transition-all duration-300">
                                 <span class="text-4xl mb-3 block">🍺👑</span>
-                                <span class="inline-block bg-amber-500 text-dark text-xs font-bold px-3 py-1 rounded-full mb-3" data-i18n="events.event1.badge">SEASON START</span>
-                                <h3 class="font-bebas text-2xl text-amber-400 mb-2" data-i18n="events.event1.title">Bierkönig Opening 2026</h3>
+                                <span class="inline-block bg-amber-500 text-dark text-xs font-bold px-3 py-1 rounded-full mb-3">SEASON START</span>
+                                <h3 class="font-bebas text-2xl text-amber-400 mb-2">Bierkönig Opening 2026</h3>
                                 <p class="text-white font-bold text-lg mb-2">16.04. – 19.04.2026</p>
-                                <p class="text-gray-400 text-sm" data-i18n="events.event1.desc">Der offizielle Startschuss! Die Könige kehren zurück.</p>
+                                <p class="text-gray-400 text-sm">Der offizielle Startschuss! Die Könige kehren zurück.</p>
                             </div>
                         </div>
                         <div class="hidden md:flex w-12 h-12 bg-amber-500 rounded-full items-center justify-center text-2xl z-10 mx-auto my-4 md:my-0">🍺</div>
@@ -232,10 +277,10 @@
                         <div class="md:w-1/2 md:pl-8">
                             <div class="bg-gradient-to-br from-pink-500/20 to-purple-500/10 rounded-2xl p-6 border border-pink-500/30 card-glow transition-all duration-300">
                                 <span class="text-4xl mb-3 block">🎪🔥</span>
-                                <span class="inline-block bg-pink-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-3" data-i18n="events.event2.badge">BIG OPENING</span>
-                                <h3 class="font-bebas text-2xl text-pink-400 mb-2" data-i18n="events.event2.title">Megapark Opening 2026</h3>
+                                <span class="inline-block bg-pink-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-3">BIG OPENING</span>
+                                <h3 class="font-bebas text-2xl text-pink-400 mb-2">Megapark Opening 2026</h3>
                                 <p class="text-white font-bold text-lg mb-2">23.04. – 26.04.2026</p>
-                                <p class="text-gray-400 text-sm" data-i18n="events.event2.desc">Das große Opening – wenn der Park ruft, kommen wir!</p>
+                                <p class="text-gray-400 text-sm">Das große Opening – wenn der Park ruft, kommen wir!</p>
                             </div>
                         </div>
                     </div>
@@ -245,10 +290,10 @@
                         <div class="md:w-1/2 md:pr-8 md:text-right">
                             <div class="bg-gradient-to-br from-red-500/20 to-yellow-500/10 rounded-2xl p-6 border border-red-500/30 card-glow transition-all duration-300">
                                 <span class="text-4xl mb-3 block">⚽🏆</span>
-                                <span class="inline-block bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full mb-3" data-i18n="events.event3.badge">SPECIAL EVENT</span>
-                                <h3 class="font-bebas text-2xl text-red-400 mb-2" data-i18n="events.event3.title">WM Finale 2026 Public Viewing</h3>
+                                <span class="inline-block bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full mb-3">SPECIAL EVENT</span>
+                                <h3 class="font-bebas text-2xl text-red-400 mb-2">WM Finale 2026 Public Viewing</h3>
                                 <p class="text-white font-bold text-lg mb-2">19.07.2026</p>
-                                <p class="text-gray-400 text-sm" data-i18n="events.event3.desc">Treffpunkt: Bierkönig – Wir holen den Pott!</p>
+                                <p class="text-gray-400 text-sm">Treffpunkt: Bierkönig – Wir holen den Pott!</p>
                                 <p class="text-neon text-xs mt-2 font-bold">📍 Bierkönig, Playa de Palma</p>
                             </div>
                         </div>
@@ -263,11 +308,11 @@
                         <div class="md:w-1/2 md:pl-8">
                             <div class="bg-gradient-to-br from-purple-500/20 to-blue-500/10 rounded-2xl p-6 border border-purple-500/30 card-glow transition-all duration-300">
                                 <span class="text-4xl mb-3 block">🌅😢</span>
-                                <span class="inline-block bg-purple-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-3" data-i18n="events.event4.badge">SEASON FINALE</span>
-                                <h3 class="font-bebas text-2xl text-purple-400 mb-2" data-i18n="events.event4.title">Saison Closing 2026</h3>
+                                <span class="inline-block bg-purple-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-3">SEASON FINALE</span>
+                                <h3 class="font-bebas text-2xl text-purple-400 mb-2">Saison Closing 2026</h3>
                                 <p class="text-white font-bold text-lg mb-2">22.10. – 25.10.2026</p>
-                                <p class="text-gray-400 text-sm" data-i18n="events.event4.desc">Der letzte Tanz – aber nur bis nächstes Jahr!</p>
-                                <p class="text-gray-500 text-xs mt-2 italic" data-i18n="events.event4.note">* Voraussichtlicher Termin</p>
+                                <p class="text-gray-400 text-sm">Der letzte Tanz – aber nur bis nächstes Jahr!</p>
+                                <p class="text-gray-500 text-xs mt-2 italic">* Voraussichtlicher Termin</p>
                             </div>
                         </div>
                     </div>
@@ -277,16 +322,29 @@
         </div>
     </section>
     
-    <!-- CTA Section -->
+    <!-- Social CTA Section -->
     <section class="py-16 md:py-20 px-4 bg-dark">
         <div class="container mx-auto max-w-3xl text-center">
             <div class="gradient-party rounded-3xl p-8 md:p-12">
-                <span class="text-5xl mb-4 block">🚀</span>
-                <h2 class="font-bebas text-3xl md:text-4xl text-dark mb-4" data-i18n="cta.title">Bist du dabei?</h2>
-                <p class="text-dark/80 mb-6" data-i18n="cta.text">Werde Teil der Familie und verpasse keinen Moment!</p>
-                <a href="mailto:hallo@teamfilmriss.de?subject=Ich%20bin%20dabei!" class="inline-block bg-dark text-neon font-bold text-lg px-8 py-4 rounded-full hover:bg-gray-900 transition-colors shake">
-                    <span data-i18n="cta.button">📧 Schreib uns!</span>
-                </a>
+                <span class="text-5xl mb-4 block">📱</span>
+                <h2 class="font-bebas text-3xl md:text-4xl text-dark mb-4">Folge uns auf Social Media!</h2>
+                <p class="text-dark/80 mb-8">Bleib auf dem Laufenden und werde Teil der Community!</p>
+                
+                <!-- Social Buttons -->
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="https://www.instagram.com/team.filmriss?igsh=ZDAzZDA1endyMmx6" target="_blank" class="instagram-btn text-white font-bold text-lg px-8 py-4 rounded-full flex items-center justify-center gap-3 transition-all duration-300 hover:scale-105 hover:shadow-lg">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                        Instagram
+                    </a>
+                    <a href="https://www.tiktok.com/@team.filmriss/" target="_blank" class="bg-black text-white font-bold text-lg px-8 py-4 rounded-full flex items-center justify-center gap-3 transition-all duration-300 hover:scale-105 border-2 border-white/20 hover:shadow-[0_0_20px_rgba(0,242,234,0.5),0_0_20px_rgba(255,0,80,0.5)]">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                        </svg>
+                        TikTok
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -296,33 +354,32 @@
         <div class="container mx-auto max-w-4xl">
             <div class="text-center">
                 <!-- Logo -->
-                <div class="font-bebas text-3xl mb-6">
-                    <span class="text-neon">Team.</span><span class="text-party">Filmriss</span>
+                <div class="mb-6">
+                    <img src="/mnt/user-data/uploads/9679d2bf-5bed-4dc7-bc60-ea5ce7eb1ce3.jpeg" alt="Team Filmriss Logo" class="w-20 h-20 mx-auto rounded-full logo-glow mb-4">
+                    <div class="font-bebas text-3xl">
+                        <span class="text-white">TEAM </span><span class="text-neon">FILMRISS</span>
+                    </div>
                 </div>
                 
                 <!-- Social Links -->
                 <div class="flex justify-center gap-4 mb-8">
-                    <a href="#" class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-2xl hover:bg-neon hover:text-dark transition-all duration-300" title="Instagram">
-                        📸
+                    <a href="https://www.instagram.com/team.filmriss?igsh=ZDAzZDA1endyMmx6" target="_blank" class="w-14 h-14 instagram-btn rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110" title="Instagram">
+                        <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
                     </a>
-                    <a href="#" class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-2xl hover:bg-party transition-all duration-300" title="TikTok">
-                        🎵
-                    </a>
-                    <a href="mailto:hallo@teamfilmriss.de" class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-2xl hover:bg-neon hover:text-dark transition-all duration-300" title="Email">
-                        ✉️
+                    <a href="https://www.tiktok.com/@team.filmriss/" target="_blank" class="w-14 h-14 bg-black rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 border-2 border-white/20 hover:shadow-[0_0_15px_rgba(0,242,234,0.5),0_0_15px_rgba(255,0,80,0.5)]" title="TikTok">
+                        <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                        </svg>
                     </a>
                 </div>
                 
-                <!-- Contact -->
-                <p class="text-gray-500 mb-4">
-                    <a href="mailto:hallo@teamfilmriss.de" class="hover:text-neon transition-colors" data-i18n="footer.contact">📧 hallo@teamfilmriss.de</a>
-                </p>
-                
                 <!-- Copyright -->
-                <p class="text-gray-600 text-sm" data-i18n="footer.copyright">
-                    © 2026 Team.Filmriss – Alle Rechte vorbehalten 🍻
+                <p class="text-gray-600 text-sm">
+                    © 2026 Team Filmriss – Alle Rechte vorbehalten 🍻
                 </p>
-                <p class="text-gray-700 text-xs mt-2" data-i18n="footer.disclaimer">
+                <p class="text-gray-700 text-xs mt-2">
                     Trinke verantwortungsvoll. Wir sehen uns an der Playa!
                 </p>
             </div>
@@ -330,165 +387,6 @@
     </footer>
 
     <script>
-        const translations = {
-            de: {
-                'hero.headline1': 'Mallorca ist nur einmal im Jahr?',
-                'hero.headline2': 'Nicht mit uns!',
-                'hero.subline': 'Die wildeste Community der Playa de Palma wartet auf dich. Bist du bereit für 2026?',
-                'hero.cta': '🎉 Zu den Terminen 2026',
-                'about.title': 'Wer wir sind',
-                'about.text': 'Wir sind eine Gemeinschaft aus Partybegeisterten, die das Leben feiern. Kein Stress, nur gute Laune und kalte Getränke an der Playa. Vom ersten Sangria bis zum letzten Song – bei uns bist du nie allein!',
-                'philosophy.title': 'Unsere Philosophie',
-                'philosophy.motto': '"Niemand feiert allein."',
-                'philosophy.value1.title': 'Zusammenhalt',
-                'philosophy.value1.text': 'Einer für alle, alle für Sangria!',
-                'philosophy.value2.title': 'Spaß',
-                'philosophy.value2.text': 'Das Leben ist zu kurz für schlechte Partys!',
-                'philosophy.value3.title': 'Verantwortung',
-                'philosophy.value3.text': 'Trotz Filmriss sicher nach Hause – wir passen aufeinander auf!',
-                'events.title': 'Termine 2026',
-                'events.subtitle': 'Merk dir diese Daten – oder wir holen dich persönlich ab!',
-                'events.event1.badge': 'SEASON START',
-                'events.event1.title': 'Bierkönig Opening 2026',
-                'events.event1.desc': 'Der offizielle Startschuss! Die Könige kehren zurück.',
-                'events.event2.badge': 'BIG OPENING',
-                'events.event2.title': 'Megapark Opening 2026',
-                'events.event2.desc': 'Das große Opening – wenn der Park ruft, kommen wir!',
-                'events.event3.badge': 'SPECIAL EVENT',
-                'events.event3.title': 'WM Finale 2026 Public Viewing',
-                'events.event3.desc': 'Treffpunkt: Bierkönig – Wir holen den Pott!',
-                'events.event4.badge': 'SEASON FINALE',
-                'events.event4.title': 'Saison Closing 2026',
-                'events.event4.desc': 'Der letzte Tanz – aber nur bis nächstes Jahr!',
-                'events.event4.note': '* Voraussichtlicher Termin',
-                'cta.title': 'Bist du dabei?',
-                'cta.text': 'Werde Teil der Familie und verpasse keinen Moment!',
-                'cta.button': '📧 Schreib uns!',
-                'footer.contact': '📧 hallo@teamfilmriss.de',
-                'footer.copyright': '© 2026 Team.Filmriss – Alle Rechte vorbehalten 🍻',
-                'footer.disclaimer': 'Trinke verantwortungsvoll. Wir sehen uns an der Playa!'
-            },
-            en: {
-                'hero.headline1': 'Mallorca only once a year?',
-                'hero.headline2': 'Not with us, baby!',
-                'hero.subline': 'The wildest crew on Playa de Palma is waiting for you. Ready to rock 2026?',
-                'hero.cta': '🎉 Check out 2026 Dates',
-                'about.title': 'Who We Are',
-                'about.text': "We're a bunch of party animals who live to celebrate life. No drama, just good vibes and ice-cold drinks at the Playa. From the first Sangria to the last song – you're never alone with us!",
-                'philosophy.title': 'Our Philosophy',
-                'philosophy.motto': '"Nobody parties alone."',
-                'philosophy.value1.title': 'Unity',
-                'philosophy.value1.text': 'One for all, all for Sangria!',
-                'philosophy.value2.title': 'Fun',
-                'philosophy.value2.text': "Life's too short for bad parties!",
-                'philosophy.value3.title': 'Responsibility',
-                'philosophy.value3.text': 'Blackout or not – we get everyone home safe!',
-                'events.title': '2026 Events',
-                'events.subtitle': 'Save these dates – or we\'ll come pick you up ourselves!',
-                'events.event1.badge': 'SEASON START',
-                'events.event1.title': 'Bierkönig Opening 2026',
-                'events.event1.desc': 'The official kickoff! The kings are back in town.',
-                'events.event2.badge': 'BIG OPENING',
-                'events.event2.title': 'Megapark Opening 2026',
-                'events.event2.desc': 'The grand opening – when the park calls, we answer!',
-                'events.event3.badge': 'SPECIAL EVENT',
-                'events.event3.title': 'World Cup Final 2026 Viewing',
-                'events.event3.desc': 'Meet up: Bierkönig – We\'re bringing the trophy home!',
-                'events.event4.badge': 'SEASON FINALE',
-                'events.event4.title': 'Season Closing 2026',
-                'events.event4.desc': 'The last dance – but only until next year!',
-                'events.event4.note': '* Estimated date',
-                'cta.title': 'You in?',
-                'cta.text': 'Join the family and don\'t miss a single moment!',
-                'cta.button': '📧 Hit us up!',
-                'footer.contact': '📧 hallo@teamfilmriss.de',
-                'footer.copyright': '© 2026 Team.Filmriss – All rights reserved 🍻',
-                'footer.disclaimer': 'Drink responsibly. See you at the Playa!'
-            },
-            es: {
-                'hero.headline1': '¿Mallorca solo una vez al año?',
-                'hero.headline2': '¡Con nosotros no,
-
-!',
-                'hero.subline': 'La crew más loca de Playa de Palma te espera. ¿Listo para 2026?',
-                'hero.cta': '🎉 Ver fechas 2026',
-                'about.title': 'Quiénes Somos',
-                'about.text': 'Somos una comunidad de
-
- que celebran la vida a tope. Sin estrés, solo
-
- vibes y
-
- bien fríos en la Playa. ¡Desde la primera Sangría hasta la última canción – nunca estarás
-
-!',
-                'philosophy.title': 'Nuestra Filosofía',
-                'philosophy.motto': '"Nadie
-
- solo."',
-                'philosophy.value1.title': 'Unidad',
-                'philosophy.value1.text': '¡Uno para todos, todos por la Sangría!',
-                'philosophy.value2.title': 'Diversión',
-                'philosophy.value2.text': '¡La vida es muy corta para
-
- malas!',
-                'philosophy.value3.title': 'Responsabilidad',
-                'philosophy.value3.text': '¡Con o sin
-
- – todos llegamos a
-
- sanos y salvos!',
-                'events.title': 'Fechas 2026',
-                'events.subtitle': '¡Apunta estas fechas – o venimos a buscarte!',
-                'events.event1.badge': 'INICIO TEMPORADA',
-                'events.event1.title': 'Bierkönig Opening 2026',
-                'events.event1.desc': '¡El pistoletazo oficial! Los reyes han vuelto.',
-                'events.event2.badge': 'GRAN APERTURA',
-                'events.event2.title': 'Megapark Opening 2026',
-                'events.event2.desc': '¡La gran apertura – cuando el parque llama, nosotros vamos!',
-                'events.event3.badge': 'EVENTO ESPECIAL',
-                'events.event3.title': 'Final Mundial 2026 Viewing',
-                'events.event3.desc': '¡Punto de encuentro: Bierkönig – Nos llevamos la copa!',
-                'events.event4.badge': 'FIN DE TEMPORADA',
-                'events.event4.title': 'Cierre Temporada 2026',
-                'events.event4.desc': '¡El último
-
- – pero solo hasta el año que viene!',
-                'events.event4.note': '* Fecha estimada',
-                'cta.title': '¿Te apuntas?',
-                'cta.text': '¡Únete a la familia y no te pierdas ni un momento!',
-                'cta.button': '📧 ¡Escríbenos!',
-                'footer.contact': '📧 hallo@teamfilmriss.de',
-                'footer.copyright': '© 2026 Team.Filmriss – Todos los derechos reservados 🍻',
-                'footer.disclaimer': 'Bebe con responsabilidad. ¡Nos vemos en la Playa!'
-            }
-        };
-
-        let currentLang = 'de';
-
-        function setLanguage(lang) {
-            currentLang = lang;
-            
-            // Update HTML lang attribute
-            document.documentElement.lang = lang;
-            
-            // Update all translatable elements
-            document.querySelectorAll('[data-i18n]').forEach(element => {
-                const key = element.getAttribute('data-i18n');
-                if (translations[lang] && translations[lang][key]) {
-                    element.textContent = translations[lang][key];
-                }
-            });
-            
-            // Update active language button
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.remove('active');
-                if (btn.getAttribute('data-lang') === lang) {
-                    btn.classList.add('active');
-                }
-            });
-        }
-
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -502,9 +400,6 @@
                 }
             });
         });
-
-        // Initialize
-        setLanguage('de');
     </script>
 </body>
 </html>
